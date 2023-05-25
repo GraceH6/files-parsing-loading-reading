@@ -4,11 +4,12 @@ import com.opencsv.CSVReader;
 import org.junit.jupiter.api.Test;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ZipFolderParsingTest {
     ClassLoader cl = ZipFolderParsingTest.class.getClassLoader();
@@ -36,10 +37,10 @@ public class ZipFolderParsingTest {
             try (ZipInputStream zis = new ZipInputStream(is)) {
                 ZipEntry entry;
                 while ((entry = zis.getNextEntry()) != null) {
-                    if (entry.getName().equals("employees_list.csv")) {
+                    if (entry.getName().equals("employees.csv")) {
                         CSVReader csvReader = new CSVReader(new InputStreamReader(zis));
                         List<String[]> content = csvReader.readAll();
-                        assertArrayEquals(new String[]{"Manager", "Bostanov"}, content.get(1));
+                        assertArrayEquals(new String[] {"Manager", "Ayatov"}, content.get(1));
                     }
                 }
             }

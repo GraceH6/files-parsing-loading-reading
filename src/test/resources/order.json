@@ -1,0 +1,11 @@
+{
+  "orderID": 6,
+  "customerName": "Zhansaya Kalsatova",
+  "customerEmail": "zhansayakalsat@gmail.com",
+  "orderContent" : {
+    "productID": 52,
+    "productName": "RedBull",
+    "quantity": 10
+  },
+  "orderCompleted": true
+}

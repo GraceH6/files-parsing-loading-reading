@@ -4,11 +4,9 @@ import com.opencsv.CSVReader;
 import org.junit.jupiter.api.Test;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ZipFolderParsingTest {

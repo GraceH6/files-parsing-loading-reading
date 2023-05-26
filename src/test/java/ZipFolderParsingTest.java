@@ -54,7 +54,7 @@ public class ZipFolderParsingTest {
                 while ((entry = zis.getNextEntry()) != null) {
                     if (entry.getName().equals("price.xls")) {
                         XLS xls = new XLS(zis);
-                        assertEquals(xls.excel.getSheetAt(0).getRow(0).getCell(0).getStringCellValue(), "Product");
+                        assertEquals("Product", xls.excel.getSheetAt(0).getRow(0).getCell(0).getStringCellValue());
                     }
                 }
             }
